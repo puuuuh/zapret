@@ -224,7 +224,6 @@ static bool nfq_init(struct nfq_handle **h, struct nfq_q_handle **qh)
 	DLOG_CONDUP("unbinding existing nf_queue handler for AF_INET (if any)\n");
 	if (nfq_unbind_pf(*h, AF_INET) < 0) {
 		DLOG_PERROR("nfq_unbind_pf()");
-		goto exiterr;
 	}
 
 	DLOG_CONDUP("binding nfnetlink_queue as nf_queue handler for AF_INET\n");
